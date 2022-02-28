@@ -1,14 +1,11 @@
 import mongoose, { ConnectOptions } from "mongoose";
 
 const dbConnection = async () => {
-const uri: string = process.env.MONGO_URL
+  const url=process.env.MONGO_URL
 await mongoose
-      .connect(uri!, {
+      .connect('mongodb://localhost:27017/todos', {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
-        useCreateIndex: true,
-        useFindAndModify: false,
-        poolSize: parseInt(process.env.POOL_SIZE!),
+        useUnifiedTopology: true
       } as ConnectOptions)
       .then((res) => {
         console.log(
@@ -21,6 +18,6 @@ await mongoose
           err
         );
       });
- 
+
 }
 export default dbConnection

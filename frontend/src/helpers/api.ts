@@ -45,7 +45,7 @@ export const updateTodo = async (
     )
     return updatedTodo
   } catch (error) {
-    throw new Error(error)
+        throw new Error(error?.message)
   }
 }
 
@@ -59,6 +59,6 @@ export const deleteTodo = async (
     )
     return deletedTodo
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error?.message) 
   }
 }
