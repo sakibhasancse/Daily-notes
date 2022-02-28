@@ -48,6 +48,8 @@ export const updateTodo = async (
     throw new Error(error)
   }
 }
+
+
 export const deleteTodo = async (
   _id: string
 ): Promise<AxiosResponse<ApiDataType>> => {
