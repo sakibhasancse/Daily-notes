@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios"
 
-const baseUrl: string = "http://localhost:4000"
+const baseUrl: string = "http://localhost:8080"
 
 export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
   try {
@@ -9,7 +9,7 @@ export const getTodos = async (): Promise<AxiosResponse<ApiDataType>> => {
     )
     return todos
   } catch (error) {
-    throw new Error(error)
+      throw new Error('error found') 
   }
 }
 
@@ -28,7 +28,7 @@ export const addTodo = async (
     )
     return saveTodo
   } catch (error) {
-    throw new Error(error)
+     throw new Error('error found') 
   }
 }
 
@@ -45,7 +45,7 @@ export const updateTodo = async (
     )
     return updatedTodo
   } catch (error) {
-        throw new Error(error?.message)
+         throw new Error('error found') 
   }
 }
 
@@ -59,6 +59,6 @@ export const deleteTodo = async (
     )
     return deletedTodo
   } catch (error) {
-    throw new Error(error?.message) 
+    throw new Error('error found') 
   }
 }

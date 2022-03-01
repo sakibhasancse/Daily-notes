@@ -5,10 +5,11 @@ const port = 8080; // default port to listen
 import todoRoutes from "./routes/todos"
 
 const app: Express = express();
-
+dbConnection()
+app.use(express.json());
 app.use(cors())
 app.use(todoRoutes)
-dbConnection()
+
 
 app.listen(port, () => {
   // tslint:disable-next-line:no-console
